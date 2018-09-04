@@ -1,0 +1,13 @@
+{
+    "url_to_lookup": "",
+    "frequency": "", // in seconds
+    "emails_to_alert": "emailone@email.com, emailtwo@email.com",
+    "mail": {
+        "host": "",
+        "port": 25,
+        "secure": false,
+        "user": "",
+        "password": "",
+        "from": "WebsiteDownAlert <alert@mail.com>",
+    }
+}
