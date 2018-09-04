@@ -29,11 +29,12 @@ setInterval(() => {
     const dt = datetime.create().format('d/m/Y H:M:S');
     request(settings.url_to_lookup)
         .then(() => {
-        if (failuresCounter > 3 && successesCounter <= 3) {
+        if (successesCounter < 3) {
             successesCounter++;
         }
-        else if (failuresCounter > 3 && successesCounter > 3) {
-            failuresCounter = 0;
+        else if (successesCounter === 3) {
+            if (failuresCounter > 3)
+                failuresCounter = 0;
             windowsLog.warn('Service came up again at: ' + dt);
             const newMailOptions = Object.assign({}, mailOptions);
             newMailOptions.subject = 'The website ' + settings.url_to_lookup + ' is back online again';
