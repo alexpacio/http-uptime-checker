@@ -1,13 +1,13 @@
 {
-    "url_to_lookup": "",
-    "frequency": "", // in seconds
-    "emails_to_alert": "emailone@email.com, emailtwo@email.com",
+    "url_to_lookup": "https://www.space23.it/blog/",
+    "frequency": 15,
+    "emails_to_alert": "abolletta@netter.io, andrea.becchio@maxisport.com",
     "mail": {
-        "host": "",
+        "host": "192.168.45.2",
         "port": 25,
         "secure": false,
-        "user": "",
-        "password": "",
-        "from": "WebsiteDownAlert <alert@mail.com>",
+        "user": "alert@netadministrator.it",
+        "password": "743ht8feg7g934o",
+        "from": "WebsiteDownAlert <alert@netadministrator.it>"
     }
 }
