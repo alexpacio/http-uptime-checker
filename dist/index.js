@@ -4,6 +4,7 @@ const nodemailer = require("nodemailer");
 const request = require("request-promise-native");
 const fs = require("fs");
 const datetime = require("node-datetime");
+const node_windows_1 = require("node-windows");
 let settings = JSON.parse(fs.readFileSync('./settings.json').toString());
 let transporter = nodemailer.createTransport({
     host: settings.mail.host,
@@ -21,22 +22,32 @@ const mailOptions = {
     text: 'The website ' + settings.url_to_lookup + ' went down at ',
     html: '<b>The website ' + settings.url_to_lookup + ' went down at '
 };
+let failuresCounter = 0;
+let successesCounter = 0;
+let windowsLog = new node_windows_1.EventLogger('Http Uptime Checker');
 setInterval(() => {
     request(settings.url_to_lookup)
-        .then(data => {
-        console.log("server contacted successfully");
+        .then(() => {
+        if (failuresCounter > 3 && successesCounter <= 3) {
+            successesCounter++;
+        }
+        else if (failuresCounter > 3 && successesCounter > 3) {
+            failuresCounter = 0;
+        }
     })
-        .catch(data => {
+        .catch(() => {
+        failuresCounter++;
         const dt = datetime.create().format('d/m/Y H:M:S');
-        console.log('Service went down at: ' + dt);
-        const newMailOptions = Object.assign({}, mailOptions);
-        newMailOptions.text += dt;
-        newMailOptions.html += dt + '</b>';
-        transporter.sendMail(newMailOptions, (error, info) => {
-            if (error) {
-                return console.log(error);
-            }
-            console.log('Message sent: %s', info.messageId);
-        });
+        if (failuresCounter <= 3) {
+            windowsLog.warn('Service went down at: ' + dt);
+            const newMailOptions = Object.assign({}, mailOptions);
+            newMailOptions.text += dt;
+            newMailOptions.html += dt + '</b>';
+            transporter.sendMail(newMailOptions, (error, info) => {
+                if (error) {
+                    windowsLog.error(error);
+                }
+            });
+        }
     });
 }, settings.frequency * 1000);

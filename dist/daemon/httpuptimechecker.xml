@@ -1,0 +1,25 @@
+<service>
+	<id>httpuptimechecker.exe</id>
+	<name>Http Uptime Checker</name>
+	<description>Checks if an HTTP service is up and fires an email alarm when down</description>
+	<executable>C:\Program Files\nodejs\node.exe</executable>
+	<logmode>rotate</logmode>
+	<argument>--harmony</argument>
+	<argument>C:\http-uptime-checker\node_modules\node-windows\lib\wrapper.js</argument>
+	<argument>--file</argument>
+	<argument>C:\http-uptime-checker\dist\index.js</argument>
+	<argument>--log</argument>
+	<argument>Http Uptime Checker wrapper</argument>
+	<argument>--grow</argument>
+	<argument>0.25</argument>
+	<argument>--wait</argument>
+	<argument>1</argument>
+	<argument>--maxrestarts</argument>
+	<argument>3</argument>
+	<argument>--abortonerror</argument>
+	<argument>n</argument>
+	<argument>--stopparentfirst</argument>
+	<argument>undefined</argument>
+	<stoptimeout>30sec</stoptimeout>
+	<workingdirectory>C:\http-uptime-checker</workingdirectory>
+</service>
