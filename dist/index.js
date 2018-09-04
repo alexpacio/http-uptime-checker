@@ -26,6 +26,7 @@ let failuresCounter = 0;
 let successesCounter = 0;
 let windowsLog = new node_windows_1.EventLogger('Http Uptime Checker');
 setInterval(() => {
+    const dt = datetime.create().format('d/m/Y H:M:S');
     request(settings.url_to_lookup)
         .then(() => {
         if (failuresCounter > 3 && successesCounter <= 3) {
@@ -33,11 +34,20 @@ setInterval(() => {
         }
         else if (failuresCounter > 3 && successesCounter > 3) {
             failuresCounter = 0;
+            windowsLog.warn('Service came up again at: ' + dt);
+            const newMailOptions = Object.assign({}, mailOptions);
+            newMailOptions.subject = 'The website ' + settings.url_to_lookup + ' is back online again';
+            newMailOptions.text = 'The website ' + settings.url_to_lookup + ' came online at ' + dt;
+            newMailOptions.html = '<b>The website ' + settings.url_to_lookup + ' came online at ' + dt + '</b>';
+            transporter.sendMail(newMailOptions, (error, info) => {
+                if (error) {
+                    windowsLog.error(error.message);
+                }
+            });
         }
     })
         .catch(() => {
         failuresCounter++;
-        const dt = datetime.create().format('d/m/Y H:M:S');
         if (failuresCounter <= 3) {
             windowsLog.warn('Service went down at: ' + dt);
             const newMailOptions = Object.assign({}, mailOptions);
@@ -45,7 +55,7 @@ setInterval(() => {
             newMailOptions.html += dt + '</b>';
             transporter.sendMail(newMailOptions, (error, info) => {
                 if (error) {
-                    windowsLog.error(error);
+                    windowsLog.error(error.message);
                 }
             });
         }

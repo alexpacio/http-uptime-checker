@@ -1,34 +1,18 @@
-2018-09-04 13:10:37 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\http-uptime-checker\node_modules\node-windows\lib\wrapper.js --file C:\http-uptime-checker\dist\index.js --log "Http Uptime Checker wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
-2018-09-04 13:10:37 - Started 5604
-2018-09-04 13:11:15 - Stopping httpuptimechecker.exe
-2018-09-04 13:11:15 - ProcessKill 5604
-2018-09-04 13:11:15 - Found child process: 2368 Name: conhost.exe
-2018-09-04 13:11:15 - Found child process: 1932 Name: node.exe
-2018-09-04 13:11:15 - Stopping process 2368
-2018-09-04 13:11:15 - Send SIGINT 2368
-2018-09-04 13:11:15 - SIGINT to 2368 failed - Killing as fallback
-2018-09-04 13:11:15 - Stopping process 1932
-2018-09-04 13:11:15 - Send SIGINT 1932
-2018-09-04 13:11:15 - SIGINT to 1932 failed - Killing as fallback
-2018-09-04 13:11:15 - Stopping process 5604
-2018-09-04 13:11:15 - Send SIGINT 5604
-2018-09-04 13:11:15 - SIGINT to 5604 failed - Killing as fallback
-2018-09-04 13:11:15 - Finished httpuptimechecker.exe
-2018-09-04 13:11:41 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\http-uptime-checker\node_modules\node-windows\lib\wrapper.js --file C:\http-uptime-checker\dist\index.js --log "Http Uptime Checker wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
-2018-09-04 13:11:41 - Started 296
-2018-09-04 13:13:23 - Stopping httpuptimechecker.exe
-2018-09-04 13:13:23 - ProcessKill 296
-2018-09-04 13:13:24 - Found child process: 4000 Name: conhost.exe
-2018-09-04 13:13:24 - Found child process: 4128 Name: node.exe
-2018-09-04 13:13:24 - Stopping process 4000
-2018-09-04 13:13:24 - Send SIGINT 4000
-2018-09-04 13:13:24 - SIGINT to 4000 failed - Killing as fallback
-2018-09-04 13:13:24 - Stopping process 4128
-2018-09-04 13:13:24 - Send SIGINT 4128
-2018-09-04 13:13:24 - SIGINT to 4128 failed - Killing as fallback
-2018-09-04 13:13:24 - Stopping process 296
-2018-09-04 13:13:24 - Send SIGINT 296
-2018-09-04 13:13:24 - SIGINT to 296 failed - Killing as fallback
-2018-09-04 13:13:24 - Finished httpuptimechecker.exe
-2018-09-04 13:13:25 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\http-uptime-checker\node_modules\node-windows\lib\wrapper.js --file C:\http-uptime-checker\dist\index.js --log "Http Uptime Checker wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
-2018-09-04 13:13:25 - Started 5420
+2018-09-04 13:55:50 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\http-uptime-checker\node_modules\node-windows\lib\wrapper.js --file C:\http-uptime-checker\dist\index.js --log "Http Uptime Checker wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2018-09-04 13:55:50 - Started 3544
+2018-09-04 13:55:59 - Stopping httpuptimechecker.exe
+2018-09-04 13:55:59 - ProcessKill 3544
+2018-09-04 13:56:00 - Found child process: 4908 Name: conhost.exe
+2018-09-04 13:56:00 - Found child process: 5464 Name: node.exe
+2018-09-04 13:56:00 - Stopping process 4908
+2018-09-04 13:56:00 - Send SIGINT 4908
+2018-09-04 13:56:00 - SIGINT to 4908 failed - Killing as fallback
+2018-09-04 13:56:00 - Stopping process 5464
+2018-09-04 13:56:00 - Send SIGINT 5464
+2018-09-04 13:56:00 - SIGINT to 5464 failed - Killing as fallback
+2018-09-04 13:56:00 - Stopping process 3544
+2018-09-04 13:56:00 - Send SIGINT 3544
+2018-09-04 13:56:00 - SIGINT to 3544 failed - Killing as fallback
+2018-09-04 13:56:00 - Finished httpuptimechecker.exe
+2018-09-04 13:56:02 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\http-uptime-checker\node_modules\node-windows\lib\wrapper.js --file C:\http-uptime-checker\dist\index.js --log "Http Uptime Checker wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2018-09-04 13:56:02 - Started 4936
